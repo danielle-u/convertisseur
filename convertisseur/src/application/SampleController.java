@@ -14,7 +14,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 public class SampleController implements Initializable{
-		
+	// déclare tous les fx id	
 	@FXML
 	private TextField lblTemperature2;
 	
@@ -44,6 +44,8 @@ public class SampleController implements Initializable{
 
     @FXML
     private TextField lblVolume1;
+    
+    // string pour affichier des mots
 
     @FXML
     private ComboBox<String> cboEnergie1;
@@ -78,6 +80,7 @@ public class SampleController implements Initializable{
     @FXML
     private Button btn;
     
+    //pour fermer l'application grace au boutton fermer
     @FXML
     private void fermer ()
     {
@@ -85,26 +88,27 @@ public class SampleController implements Initializable{
     }
     
     
-    //longueur
+    //valeurs de longueur
     private ObservableList<String> listeLongueur = (ObservableList<String>)FXCollections.observableArrayList ("kilomètre", "mètre", "centimètre", "verge", "pouces");
     double [] longueur = {0.001, 1.0, 100.0, 1.09361, 39.37};
     
-    //volume
+    //valeurs de volume
     private ObservableList<String> listeVolume = (ObservableList<String>)FXCollections.observableArrayList ("litre", "mililitre", "once", "cuillère à soupe", "cuillère à thé");
     double [] volume = {0.001, 1.0, 0.035, 0.067, 0.2};
     
-    //température
+    //valeurs de température
     private ObservableList<String> listeTempérature = (ObservableList<String>)FXCollections.observableArrayList ("celsius", "fahrenheit", "kelvin");
     double [] temperature = {1.0, 33.8, 274.15};
     
-    //energie
+    //valeurs de energie
     private ObservableList<String> listeEnergie = (ObservableList<String>)FXCollections.observableArrayList ("joule", "kilojoule", "watt", "gramme calorie", "volt");
     double [] energie = {1.0, 0.001, 0.00027, 0.23, 6.24};
     
-    //poids
+    //valeurs de poids
     private ObservableList<String> listePoids = (ObservableList<String>)FXCollections.observableArrayList ("kilogramme", "gramme", "tonne", "livre", "pierres");
     double [] poids = {0.001, 1.0, 1.1, 0.002, 0.0001};
     
+    //pour affichier le premier term dans le tableau sur le combo box
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
 		{
@@ -134,79 +138,90 @@ public class SampleController implements Initializable{
 			cboPoids2.getSelectionModel().selectFirst();
 		}
 	
-	//longueur
+	//calculer la longueur
 	@FXML
 	void calculerLongueur1 ()
 	{
 			convertir (lblLongueur1, lblLongueur2, cboLongueur1, cboLongueur2, longueur);
 	}
 	
+	// calculs pour faire l'envers
 	@FXML
 	void calculerLongueur2 ()
 	{
 			convertir (lblLongueur2, lblLongueur1, cboLongueur2, cboLongueur1, longueur);
 	}
 	
-	//volume
+	//calculer le volume
 	@FXML
 	void calculerVolume1 ()
 	{
 			convertir (lblVolume1, lblVolume2, cboVolume1, cboVolume2, volume);
 	}
 	
+	// calculs pour faire l'envers
 	@FXML
 	void calculerVolume2 ()
 	{
 			convertir (lblVolume2, lblVolume1, cboVolume2, cboVolume1, volume);
 	}
 	
+	// calculer la température
 	@FXML
 	void calculerTemperature1 ()
 	{
 			convertir (lblTemperature1, lblTemperature2, cboTemperature1, cboTemperature2, temperature);
 	}
-	
+	// calculs pour faire l'envers
 	@FXML
 	void calculerTemperature2 ()
 	{
 			convertir (lblTemperature2, lblTemperature1, cboTemperature2, cboTemperature1, temperature);
 	}
 	
+	// calculelr la température
 	@FXML
 	void calculerEnergie1 ()
 	{
 			convertir (lblEnergie1, lblEnergie2, cboEnergie1, cboEnergie2, energie);
 	}
 	
+	// calculs pour faire l'envers
 	@FXML
 	void calculerEnergie2 ()
 	{
 			convertir (lblEnergie2, lblEnergie1, cboEnergie2, cboEnergie1, energie);
 	}
 	
+	// calculer le poids
 	@FXML
 	void calculerPoids1 ()
 	{
 			convertir (lblPoids1, lblPoids2, cboPoids1, cboPoids2, poids);
 	}
-
+	
+	// calculs pour faire l'envers
 	@FXML
 	void calculerPoids2 ()
 	{
 			convertir (lblPoids2, lblPoids1, cboPoids2, cboPoids1, poids);
 	}
 	
+	//calculs universel
 	public void convertir(TextField txtA, TextField txtB, ComboBox boxA, ComboBox boxB, double [] tab)
 	{
 			int item1 = boxA.getSelectionModel().getSelectedIndex();
 			int item2 = boxB.getSelectionModel().getSelectedIndex();
 			try
+			//pour affichier tous les nombres décimaux
 				{
 			double taux = tab [item2] / tab [item1];
 			double res = taux * (Double.parseDouble(txtA.getText()));
 			//txtLongueurB.setText(String.format("%.2 res"));	
 			txtB.setText(Double.toString(res)); 
 				}
+			
+			//tous les caratères qui ne sont pas des nombres ne fonctionne pas (sauf E) et un alert va s'affichier
 			catch (NumberFormatException e)
 				{
 				Alert alert = new Alert(AlertType.ERROR);
