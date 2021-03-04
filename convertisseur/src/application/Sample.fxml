@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="350.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <children>
+      <TabPane prefHeight="350.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="home">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btn" layoutX="431.0" layoutY="276.0" mnemonicParsing="false" onAction="#fermer" text="fermer" />
+                        <Label layoutX="137.0" layoutY="124.0" prefHeight="35.0" prefWidth="227.0" text=" bienvenue sur mon application">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="longueur">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="lblLongueur1" layoutX="48.0" layoutY="95.0" onKeyReleased="#calculerLongueur1" text="1" />
+                        <TextField fx:id="lblLongueur2" layoutX="288.0" layoutY="95.0" onKeyReleased="#calculerLongueur2" text="1" />
+                        <ComboBox fx:id="cboLongueur1" layoutX="48.0" layoutY="132.0" onKeyReleased="#calculerLongueur1" prefHeight="27.0" prefWidth="161.0" />
+                        <ComboBox fx:id="cboLongueur2" layoutX="288.0" layoutY="132.0" onKeyReleased="#calculerLongueur2" prefHeight="27.0" prefWidth="162.0" />
+                        <Button fx:id="btn" layoutX="431.0" layoutY="276.0" mnemonicParsing="false" onAction="#fermer" text="quitter" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="volume">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="lblVolume1" layoutX="46.0" layoutY="102.0" onKeyReleased="#calculerVolume1" text="1" />
+                        <TextField fx:id="lblVolume2" layoutX="287.0" layoutY="102.0" onKeyReleased="#calculerVolume1" text="1" />
+                        <ComboBox fx:id="cboVolume1" layoutX="46.0" layoutY="135.0" onKeyReleased="#calculerVolume1" prefHeight="27.0" prefWidth="161.0" />
+                        <ComboBox fx:id="cboVolume2" layoutX="288.0" layoutY="135.0" onKeyReleased="#calculerVolume2" prefHeight="27.0" prefWidth="160.0" />
+                        <Button fx:id="btn" layoutX="431.0" layoutY="276.0" mnemonicParsing="false" onAction="#fermer" text="fermer" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="température">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="lblTemperature1" layoutX="48.0" layoutY="102.0" onKeyReleased="#calculerTemperature1" text="1" />
+                        <TextField fx:id="lblTemperature2" layoutX="290.0" layoutY="102.0" onKeyReleased="#calculerTemperature2" text="1" />
+                        <ComboBox fx:id="cboTemperature1" layoutX="48.0" layoutY="138.0" onKeyReleased="#calculerTemperature1" prefHeight="27.0" prefWidth="161.0" />
+                        <ComboBox fx:id="cboTemperature2" layoutX="291.0" layoutY="138.0" onKeyReleased="#calculerTemperature2" prefHeight="27.0" prefWidth="160.0" />
+                        <Button fx:id="btn" layoutX="431.0" layoutY="276.0" mnemonicParsing="false" onAction="#fermer" text="fermer" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="énergie">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="lblEnergie1" layoutX="55.0" layoutY="113.0" onKeyReleased="#calculerEnergie1" text="1" />
+                        <TextField fx:id="lblEnergie2" layoutX="289.0" layoutY="113.0" onKeyPressed="#calculerEnergie2" text="1" />
+                        <ComboBox fx:id="cboEnergie1" layoutX="55.0" layoutY="145.0" onKeyReleased="#calculerEnergie1" prefHeight="27.0" prefWidth="160.0" />
+                        <ComboBox fx:id="cboEnergie2" layoutX="289.0" layoutY="145.0" onKeyReleased="#calculerEnergie2" prefHeight="27.0" prefWidth="161.0" />
+                        <Button fx:id="btn" layoutX="431.0" layoutY="276.0" mnemonicParsing="false" onAction="#fermer" text="fermer" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="poids">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="lblPoids1" layoutX="60.0" layoutY="105.0" onKeyReleased="#calculerPoids1" text="1" />
+                        <TextField fx:id="lblPoids2" layoutX="288.0" layoutY="105.0" onKeyReleased="#calculerPoids2" text="1" />
+                        <ComboBox fx:id="cboPoids1" layoutX="60.0" layoutY="138.0" onKeyReleased="#calculerPoids1" prefHeight="27.0" prefWidth="161.0" />
+                        <ComboBox fx:id="cboPoids2" layoutX="288.0" layoutY="138.0" onKeyReleased="#calculerPoids2" prefHeight="27.0" prefWidth="161.0" />
+                        <Button fx:id="btn" layoutX="431.0" layoutY="276.0" mnemonicParsing="false" onAction="#fermer" text="quitter" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
