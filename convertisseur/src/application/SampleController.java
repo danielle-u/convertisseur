@@ -7,6 +7,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -207,7 +209,12 @@ public class SampleController implements Initializable{
 				}
 			catch (NumberFormatException e)
 				{
-				txtA.setText("0");
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setHeaderText("attention - erreur");
+				alert.setTitle("erreur");
+				alert.setContentText("caractères autres que des nombres ne sont pas acceptées");
+				alert.show();
+				txtA.requestFocus();
 				}
 	}
 
