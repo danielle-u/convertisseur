@@ -86,8 +86,8 @@ public class SampleController implements Initializable{
     
     
     //longueur
-    private ObservableList<String> listeLongueur = (ObservableList<String>)FXCollections.observableArrayList ("kilomètre", "mètre", "centimètre", "milimètre", "pouces");
-    double [] longueur = {0.01, 1.0, 100.0, 1000.0, 39.37};
+    private ObservableList<String> listeLongueur = (ObservableList<String>)FXCollections.observableArrayList ("kilomètre", "mètre", "centimètre", "verge", "pouces");
+    double [] longueur = {0.001, 1.0, 100.0, 1.09361, 39.37};
     
     //volume
     private ObservableList<String> listeVolume = (ObservableList<String>)FXCollections.observableArrayList ("litre", "mililitre", "once", "cuillère à soupe", "cuillère à thé");
